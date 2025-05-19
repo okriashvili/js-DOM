@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascipt" lang="javscript" src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form onsubmit="registracia()" action="">
+        <input type="mail" onsubmit="mailFunc()" placeholder="ელ. ფოსტა@" id="email">
+        <p id="text1"></p>
+        <br><br>
+        <input type="password" placeholder="პაროლი" id="pass">
+        <p id="text2"></p>
+        <br><br>
+        <button type="submit">შესვლა</button>
+    </form>
+    <script>
+        function registracia() {
+            function mailFunc() {
+                var maili = document.getElementById("email").value;
+                if(mail.includes("@")){
+                    console.log(maili.value);
+                    
+                }else{
+                    maili.textContent = "მეილის ფორმატი არასოწირა"
+                };
+            };
+
+            function passFunc() {
+                var password = document.getElementById("pass");
+                var tr
+                if(password.value >= String(8)) {
+
+                    
+
+                };
+            };
+
+
+        };
+
+
+    
+    </script> -->
+    <!-- მეილის ვალდატორი -->
+    <form action="">
+        <input type="email" id="maili" placeholder="ელ ფოსტა">
+        <p id="msg"></p>
+        <button type="button" onclick="myFunc()">submit</button>
+    </form>
+    <script>
+        function myFunc() {
+            var chemiMail = document.getElementById("maili").value;
+            var pText = document.getElementById("msg");
+
+
+            if(chemiMail.includes("@") && chemiMail.includes(".")){
+                pText.textContent = "მეილის მისამართი სწორია"
+                pText.style.color = "green"
+
+            }else{
+                pText.textContent = "მეილის მისამართი არასწორია"
+                pText.style.color = "red"
+            }; 
+
+        };
+    </script>
+    <br><br><br><br><br>
+    
+    
+    <!-- მიმატების და გამოკლების კალკულატორი -->
+    <form action=""> 
+        <input type="number" id="number1" placeholder="ციფრი 1">
+        <input type="number" id="number2" placeholder="ციფრი 2">
+        <p id="cal"></p>
+        <button type="button" onclick="minusi()">გამოკლება</button>
+        <button type="button" onclick="plus()">შეკრება</button>
+    </form>
+    <script>
+            function plus() {
+                var num1 = document.getElementById("number1").value;
+                var num2 = document.getElementById("number2").value;
+                var calculacia = document.getElementById("cal");
+                var result = Number(num1) + Number(num2);
+                if(result % 2 == 0){
+                    calculacia.style.color = "green";
+                }else if(result % 2 == 1){
+                    calculacia.style.color = "red";
+                };
+                calculacia.textContent = Number(result);
+                console.log(result);  
+            };
+            function minusi() {
+                var num1 = document.getElementById("number1").value;
+                var num2 = document.getElementById("number2").value;
+                var calculacia = document.getElementById("cal");
+                var result1 = Number(num1) - Number(num2);
+                if(result1 % 2 == 0){
+                    calculacia.style.color = "green";
+                }else if(result1 % 2 == 1){
+                    calculacia.style.color = "red";
+                };
+                calculacia.textContent = Number(result1);
+                console.log(result1);
+            };            
+    </script>
+
+
+<br><br><br><br><br>
+    <!-- კალკულატორი eval ფუნქციის გამოყენებით -->
+    <h2>კალკულატორი eval ფუნქციის გამოყენებით</h2>
+    <form action="">
+        <input type="text" id="value">
+        
+        <button type="button" onclick="one()">1</button>
+        <button type="button" onclick="two()">2</button>
+        <button type="button" onclick="three()">3</button>
+        <button type="button" onclick="four()">4</button>
+        <button type="button" onclick="five()">5</button>
+        <button type="button" onclick="six()">6</button>
+        <button type="button" onclick="seven()">7</button>
+        <button type="button" onclick="eight()">8</button>
+        <button type="button" onclick="nine()">9</button>
+        <button type="button" onclick="zero()">0</button>
+
+
+        <button type="button" onclick="plas()">+</button>
+        <button type="button" onclick="min()">-</button>
+        <button type="button" onclick="times()">*</button>
+        <button type="button" onclick="div()">/</button>
+        <button type="button" onclick="perc()">%</button>
+        <button type="button" onclick="total()">=</button>
+
+    </form>
+    <script>
+        function one() {
+            document.getElementById("value").value += 1;
+        };
+        
+        function two() {
+            document.getElementById("value").value += 2;
+        };
+        
+        function three() {
+            document.getElementById("value").value += 3;
+        };
+        
+        function four() {
+        document.getElementById("value").value += 4;
+        };
+        
+        function five() {
+            document.getElementById("value").value += 5;
+        };
+        
+        function six() {
+            document.getElementById("value").value += 6;
+        };
+        
+        function seven() {
+            document.getElementById("value").value += 7;
+        };
+        
+        function eight() {
+            document.getElementById("value").value += 8;
+        };
+        
+        function nine() {
+            document.getElementById("value").value += 9;
+        };
+
+        function zero() {
+            document.getElementById("value").value += 0;
+        };
+
+    
+        function plas() {
+            document.getElementById("value").value += '+';
+        };
+        function min() {
+            document.getElementById("value").value += '-';
+        };
+        function times() {
+            document.getElementById("value").value +='*';
+        };
+        function div() {
+            document.getElementById("value").value += '/';
+        };
+        function perc() {
+            document.getElementById("value").value += '%';
+        };
+
+        function total() {
+            window.alert(eval(document.getElementById('value').value));
+        };
+    </script>
+
+
+    <br><br><br><br><br>
+    <section style="height: 400px; width: 400px; background-color: red; z-index: 0;" id="div"></section>
+<!-- ელმენტების შექმნა ჯავასკრიპტიდან -->
+    <script>
+        var newDivFromJS = document.createElement("div");
+        // ელემენტი შექმილია document.createElement("tagName")= ბრჭყალებში ვწერთ იმ ელემენტის სახელს რომლის შექმნაც გვინდა
+        newDivFromJS.style.width = "200px";
+        newDivFromJS.style.height = "200px";
+        newDivFromJS.style.backgroundColor = "blue";
+        newDivFromJS.style.zIndex = "10"
+        // ელემენტი შექმილია, და დავუმატეთ სტილები 
+        // მაგრამ როგორც ვიცით ელემენტი იქმნება body თეგის შეგნით, 
+        // იმისათვის რომ ჯავასკპირტში შექმნილი ელემენტი გამოვიძახოთ ეკრანზე საჭიროა, appendChild მეთოდი 
+        document.body.appendChild(newDivFromJS)
+        // ამ შემთხვევაში appendChildით ელემენტის გამოძახება მოხდა Body თეგში 
+        // მაგრამ შეგვიძლია ელემენტის გამოძახება აწ უკვე არსებულ ელემენტში
+        document.getElementsByTagName("section")[0].appendChild(newDivFromJS)
+        // ელემენტის გამოძახდბა შეგვიძლია მხოლოდ ერთხელ 
+
+        // document ამ მეთოდით ახალ ელემენტს ვსვავთ აწ უკვე არსებულ ელემნტში, 
+        // document. ის შემდეგ ვწერთ იმ ელემენტის დასახელებას და მის რიგითობის ნომერს რომლის შეგნითაც გვინდა ელემენტი ჩავსვათ
+
+        // მსგავს-JSში შექმნილ ელემენტებზე ქმედებები უნდა განვახორციელოთ ჯავასკრიპტიდან და არა html დან
+        // მსგავსი ქმედებები ელემენტს უნდა გავუწეროთ თვისების სახით :მაგ
+        newDivFromJS.onclick = function myClick() {
+        window.alert("hello world");
+        newDivFromJS.style.width = "300px";
+        newDivFromJS.style.height = "300px";
+        newDivFromJS.style.backgroundColor = "green";   
+        };
+        // მსგავსი ელემენტებისთვის ატრიბუტების მინიჭება ხდება setAttirubtes მეთოდით
+        newDivFromJS.setAttribute("ID", "newDiv")
+        // ორი მნიშვნელობა ენიჭება
+        // 1- ატრიბუტის სახელი, თუკი რა სახით ატირუბტიკა უნდა მივანიჭოთ: id, class და ა შ
+        // 2- თვითონ დასახელება, idის სახელი
+        var newDivInJSDiv = document.createElement("div");
+        newDivInJSDiv.style.width = "100px";
+        newDivInJSDiv.style.height = "100px";
+        newDivInJSDiv.style.backgroundColor = "purple";  
+        newDivFromJS.appendChild(newDivInJSDiv);
+    </script>
+<br><br><br><br>
+
+
+    <h3 id="hhh"></h3>
+
+
+<!-- ამოწმებს არის თუ არა მასივში ორი ერთნაირი ციფრი -->
+    <script>
+        const testResults = [12, 45, 232, 54, 89];
+            for(let i = 0; i < testResults.length; i++){
+                for(let j = i + 1; j < testResults.length; j++) {
+                    if(testResults[i] == testResults[j]){
+                        console.log("დუბლირებულია ${testResults[i]}");
+                    }else{
+                        console.log("არ არის დუბლრებული");
+                    }
+                }
+            } 
+    </script>
+    <form action="">
+        <input type="text" required oninvalid="setCustomValidity('kai raa')" oninput="setCustomValidity('')">
+        <input type="submit">
+    </form>
+
+
+    <br><br><br><br><br>
+    <!-- საკლასო დავალება: ფორმების ფუნქციონალი და მათი ვალიდაცია -->
+    <form action="" onsubmit=" return myFormFunc()" name="form">
+        <input type="email" placeholder="ელ.ფოსტა @" name="mail" oninvalid="setCustomValidity('შეიყვანეთ სწორი ფორმატის ელფოსტა')" oninput="setCustomValidity('')">
+        <p id="mailMSG"></p>
+        <input type="password" placeholder="პაროლი" name="password">
+        <p id="passMSG"></p>
+        <input type="submit">
+        <p id="scs"></p>
+    </form>
+    <br><br><br><br><br>
+    <script>
+        function myFormFunc() {
+            var forma = document.getElementsByName("form").value;
+            var m = document.forms["form"]["mail"].value;
+            var pas = document.forms["form"]["password"].value;
+
+            if(m == "") {
+                var mailMSG = document.getElementById("mailMSG")
+                mailMSG.textContent = "შეიყვანეთ ელ.ფოსტა @"
+                }else if (pas == "") {
+                    var passMSG = document.getElementById("passMSG")
+                    passMSG.textContent = "შეიყვანეთ პაროლი"
+
+                    var mailMSG = document.getElementById("mailMSG").textContent = ""
+
+                    }else{
+                        var scs = document.getElementById("scs")
+                        window.alert("წარმატებით გაიარეთ რეგისტრაცია")
+                        document.location.href = 'https://www.facebook.com'
+                        var passMSG = document.getElementById("passMSG").textContent = ""
+                    } 
+                    return false
+        }
+    </script>
+
+
+    <br><br><br><br><br>
+<!-- ფაილებზე მუშაობა -->
+    <input type="file" onchange="myFileFunc(event)" name="files" id="file">
+    <script>
+        // event არის საკვანძო სიტყვა რომლითაც ხდება ფაილებზე წვდომა, 
+        // event-ს მოყვება სა 
+        function myFileFunc(event) {
+            console.log(event.target);
+        }
+
+
+
+        
+    </script>
+</body>
+</html>
